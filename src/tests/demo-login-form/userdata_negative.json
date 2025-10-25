@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Username is empty",
+    "credentials": { "username": "", "password": "ValidPass123" },
+    "expectedMessage": "Username is required"
+  },
+  {
+    "title": "Username contains only spaces",
+    "credentials": { "username": "   ", "password": "ValidPass123" },
+    "expectedMessage": "Prefix and postfix spaces are not allowed is username"
+  },
+  {
+    "title": "Username shorter than 3 characters",
+    "credentials": { "username": "ab", "password": "ValidPass123" },
+    "expectedMessage": "Username should contain at least 3 characters"
+  },
+  {
+    "title": "Username longer than 40 characters",
+    "credentials": { "username": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "password": "ValidPass123" },
+    "expectedMessage": "Username must be between 3 and 40 characters"
+  },
+  {
+    "title": "Username with leading space",
+    "credentials": { "username": " user1", "password": "ValidPass123" },
+    "expectedMessage": "Prefix and postfix spaces are not allowed is username"
+  },
+  {
+    "title": "Username with trailing space",
+    "credentials": { "username": "user1 ", "password": "ValidPass123" },
+    "expectedMessage": "Prefix and postfix spaces are not allowed is username"
+  },
+  {
+    "title": "Password is empty",
+    "credentials": { "username": "validUser", "password": "" },
+    "expectedMessage": "Password is required"
+  },
+  {
+    "title": "Password shorter than 8 characters",
+    "credentials": { "username": "validUser", "password": "Abc12" },
+    "expectedMessage": "Password should contain at least 8 characters"
+  },
+  {
+    "title": "Password longer than 20 characters",
+    "credentials": { "username": "validUser", "password": "AAAAAAAAAAAAAAAAAAAAAAAbbb" },
+    "expectedMessage": "Password must be between 8 and 20 characters"
+  },
+  {
+    "title": "Password without uppercase letter",
+    "credentials": { "username": "validUser", "password": "lowercase123" },
+    "expectedMessage": "Password must contain at least one uppercase and one lowercase letter"
+  },
+  {
+    "title": "Password without lowercase letter",
+    "credentials": { "username": "validUser", "password": "UPPERCASE123" },
+    "expectedMessage": "Password should contain at least one character in lower case"
+  },
+  {
+    "title": "Password contains only spaces",
+    "credentials": { "username": "validUser", "password": "        " },
+    "expectedMessage": "Password is required"
+  }
+]
